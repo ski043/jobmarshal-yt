@@ -27,7 +27,7 @@ function getClient(session: boolean) {
   if (session) {
     return aj.withRule(
       tokenBucket({
-        mode: "DRY_RUN",
+        mode: "LIVE",
         capacity: 100,
         interval: 60,
         refillRate: 30,
@@ -36,7 +36,7 @@ function getClient(session: boolean) {
   } else {
     return aj.withRule(
       tokenBucket({
-        mode: "DRY_RUN",
+        mode: "LIVE",
         capacity: 100,
         interval: 60,
         refillRate: 10,
